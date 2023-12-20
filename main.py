@@ -3,6 +3,8 @@ print(x.upper())
 basic_pay = int(input("How much do you earn? "))
 relief = 2400
 
+# adding the housing levy which was introduced on July 2023
+housing_levy = basic_pay * 0.015
 
 def Nssf():
     if basic_pay <= 18000:
@@ -85,5 +87,7 @@ print('P.A.Y.E: ' + str(paye))
 pay_after_tax = income - paye
 print('PAY AFTER TAX: ' + str(pay_after_tax))
 print('NHIF: ' + str(Insurance()))
-net_pay = pay_after_tax - Insurance()
+# printing the housing levy
+print('Housing Levy: '+ str(housing_levy))
+net_pay = pay_after_tax - Insurance() - housing_levy
 print('NET PAY: ' + str(net_pay))
